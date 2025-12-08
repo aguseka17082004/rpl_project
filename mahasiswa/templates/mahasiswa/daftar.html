@@ -1,0 +1,28 @@
+{% extends 'mahasiswa/base.html' %}
+{% block content %}
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2>Daftar Mahasiswa</h2>
+        <a href="/accounts/logout/">Logout</a>
+    </div>
+
+    <a href="{% url 'tambah_mahasiswa' %}">+ Tambah Mahasiswa</a>
+    <table border="1">
+        <tr>
+            <th>NIM</th>
+            <th>Nama</th>
+            <th>Program Studi</th>
+            <th>Aksi</th>
+        </tr>
+ {% for mhs in mahasiswas %}
+        <tr>
+            <td>{{ mhs.nim }}</td>
+            <td>{{ mhs.nama }}</td>
+            <td>{{ mhs.programstudi }}</td>
+        <td>
+            <a href="{% url 'edit_mahasiswa' mhs.id %}">Edit</a> |
+            <a href="{% url 'hapus_mahasiswa' mhs.id %}">Hapus</a>
+        </td>
+        </tr>
+ {% endfor %}
+ </table>
+{% endblock %}

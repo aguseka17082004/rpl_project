@@ -1,0 +1,20 @@
+{% extends 'mahasiswa/base.html' %}
+{% load static %}
+{% block content %}
+<section class="hero">
+  <div class="hero-container">
+    <h1 class="page-title">Praktikum RPL - Django</h1>
+
+    <img src="{% static 'mahasiswa/img/logo-usm.jpg' %}" alt="logo" class="logo" />
+
+    <h2 class="hero-title">Selamat Datang di Praktikum RPL</h2>
+    <p class="hero-text">
+      Ini adalah halaman index yang dibuat menggunakan Django Template.
+    </p>
+
+    <a href="#" id="btnMulai" class="btn">Mulai</a>
+
+    <p class="footer-text">© 2025 - Praktikum</p>
+  </div>
+</section>
+{% endblock %}
