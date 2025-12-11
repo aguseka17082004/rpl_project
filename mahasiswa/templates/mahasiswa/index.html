@@ -1,6 +1,58 @@
 {% extends 'mahasiswa/base.html' %}
 {% load static %}
 {% block content %}
+
+<style>
+  /* Background hero */
+  .hero {
+      background: linear-gradient(#1e3c72d2, #2a5298d2), 
+                  url("{% static 'mahasiswa/img/bg-campus.jpg' %}");
+      background-size: cover;
+      background-position: center;
+      padding: 70px 0;
+      color: white;
+      text-align: center;
+      border-radius: 10px;
+      margin-bottom: 40px;
+  }
+
+  .hero-container {
+      max-width: 700px;
+      margin: auto;
+  }
+
+  .logo {
+      width: 120px;
+      margin: 15px 0;
+  }
+
+  .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 25px;
+      background-color: #ffc107;
+      color: black;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+  }
+
+  .btn:hover {
+      background-color: #e0a800;
+      color: white;
+  }
+
+ .footer-text {
+      margin-top: 25px;
+      font-size: 16px;
+      color: #000;      
+      font-weight: bold;  
+      text-shadow: 1px 1px 2px white; 
+}
+
+
+</style>
+
 <section class="hero">
   <div class="hero-container">
     <h1 class="page-title">Praktikum RPL - Django</h1>
@@ -9,12 +61,13 @@
 
     <h2 class="hero-title">Selamat Datang di Praktikum RPL</h2>
     <p class="hero-text">
-      Ini adalah halaman index yang dibuat menggunakan Django Template.
+      Ini adalah halaman awal praktikum.
     </p>
 
-    <a href="#" id="btnMulai" class="btn">Mulai</a>
+    <a href="{% url 'daftar_mahasiswa' %}" class="btn">Mulai</a>
 
     <p class="footer-text">© 2025 - Praktikum</p>
   </div>
 </section>
+
 {% endblock %}
